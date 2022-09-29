@@ -48,7 +48,7 @@
 
 <!-- jumbotron -->
 <section class="jumbotron text-center">
-  <img src="img/ilham28.png" alt="Muhammad Ilham Syah" width="200" class="rounded-circle img-thumbnail" />
+  <img src="img/ilhamsyah.jpg" alt="Muhammad Ilham Syah" width="200" class="rounded-circle img-thumbnail" />
   <h1 class="display-4">Muhammad Ilham Syah</h1>
   <p class="lead"> IT Support | Web Developer</p>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -72,7 +72,10 @@
     </div>
     <div class="row fs-6 justify-content-center text-center">
       <div class="col-md-6">
-        <p>Perkenalkan nama saya Muhammad Ilham Syah, saya berumur 21 tahun saya lulusan SMK PRIMA UNGGUL. saat ini saya bekerja sebagai IT Support freelance sejak 2019 & saat ini saya bekerja sebagai Office boy & menjadi kasir(Backup staff Kasir) di perusahaan yang bergerak dibidang Distributor Sabun Skin Care yang bernama Nu Amoorea. saya selalu meluangkan waktu saat istirahat melanjutkan belajar bahasa pemrogramman saat ini bahasa yang sudah saya pahami atau masih basic-basicnya seperti HTML5, CSS,CSS3 & Framework CSS yaitu Bootstrapp5  </p>
+        <p>Perkenalkan nama saya Muhammad Ilham Syah, saya berumur 21 tahun saya lulusan SMK PRIMA UNGGUL. 
+          saat ini saya bekerja sebagai IT Support freelance sejak 2019 tepatnya saat saya sudah lulus dari smk. kemampuan utama yang saya miliki
+          saya bisa trouble shooting komputer & laptop. saya memahami konfigurasi jaringan yang ada di mikrotik. selain itu
+          saya juga memahami basic-basicnya coding seperti HTML5, CSS,CSS3 & Framework CSS yaitu Bootstrapp5  </p>
         </div>
         <div class="col-md-6">
           <p>Saya sudah berpengalaman menjadi IT Support Freelance selama 3 tahun lamanya, berikut hasil project yang saya kerjakan pada client saya yang ada di halaman Project.</p>
@@ -157,30 +160,30 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-  <strong>Terima Kasih</strong> Pesan anda sudah kami terima.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-        <form>
+              <strong>Terima Kasih!</strong> Pesan anda sudah kami terima.😊🙏
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <form name="ilham-from-portofolio">
           <div class="mb-3">
             <label for="Name" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" aria-describedby="name">
+            <input type="text" class="form-control" id="name" aria-describedby="name" name="nama">
           </div>
           
           <div class="mb-3">
             <label for="email" class="form-label">Email </label>
-            <input type="email" class="form-control" id="email" aria-describedby="email">
+            <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
           </div>
           <div class="mb-3">
             <label for="pesan" class="form-label">Pesan</label>
-            <textarea class="form-control" id="pesan" rows="3"></textarea>
+            <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
           </div>
          
-          <button type="submit" class="btn btn-danger btn-Kirim">Kirim</button>
+          <button type="submit" class="btn btn-danger btn-kirim">Kirim</button>
           
           <button class="btn btn-danger btn-loading d-none" type="button" disabled>
-  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-  Loading...
-</button>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
         </form>
       </div>
     </div>
@@ -202,35 +205,37 @@
 
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="app.js"></script>
-
-<!--Koneksi database-->
 <script>
-  const scriptURL = '<SCRIPT URL>'
-  const form = document.forms['submit-to-google-sheet']
-  const btnKirim= document.querySelector('.btn-kirim');
-  const btnLoading= document.querySelector('.btn-loading');
-  const myAlert= document.querSelector('.my-alert');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyjdwjrM_fJoKfkNHrS6cG3IqyrHEAQLYucpjr8b2Y7fkh2bYyL2H8SIoUazH8s-hzVwQ/exec';
+  const form = document.forms['ilham-from-portofolio'];
+  const btnKirim = document.querySelector('.btn-kirim');
+  const btnLoading = document.querySelector('.btn-loading');
+  const myAlert = document.querySelector('.my-alert');
+
 
   form.addEventListener('submit', e => {
     e.preventDefault()
-    // ketika tombol submit diklik
-    // tampilkan tombol loading, hilangkan tombol kirim
-    btnLoading.classList.toggle('d.none');
-    btnKirim.classList.toggle('d.none');
+  //  ketiks tombol submit diklik
+  // tampilan tombol loading, hilangkan tombol kirim
+    btnLoading.classList.toggle('d-none');
+    btnKirim.classList.toggle('d-none');
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
-        //   tampilkan tombol kirim, hilangkan tombol loading
-          const btnKirim= document.querySelector('.btn-kirim');
-          const btnLoading= document.querySelector('.btn-loading');
-          const myAlert= document.querSelector('.my-alert');
-        //  tampilkan alert
-        myAlert.classList.toggle('d.none');
-          console.log('Success!', response);
+        // tampilkan tombol kirim, hilangkan tombol loading
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        // tampilkan alert
+        myAlert.classList.toggle('d-none');
+        // tampilkan form reset
+        form.reset();
+        console.log('Success!', response);
       })
-      .catch(error => console.error('Error!', error.message))
-  })
+      .catch((error) => console.error('Error!', error.message))
+      });
+
 </script>
+
+
 
 </body>
    
